@@ -23,6 +23,12 @@ def search_image(word):
         )
 
         # Open the URL in the default web browser
+        webbrowser.register(
+            "qutebrowser",
+            None,
+            webbrowser.BackgroundBrowser("/opt/homebrew/bin/qutebrowser"),
+            preferred=True,
+        )
         webbrowser.open(google_images_url)
 
         print(f"Opened browser with Google Images search for '{word}'")
